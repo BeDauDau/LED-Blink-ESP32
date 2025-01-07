@@ -3,4 +3,7 @@
 .vscode/c_cpp_properties.json
 .vscode/launch.json
 .vscode/ipch
-.include/.env
+# Environment variables
+.env
+.env.local
+.env.*
