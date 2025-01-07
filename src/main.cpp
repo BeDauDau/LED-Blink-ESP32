@@ -170,6 +170,7 @@
 
 #include <WiFi.h>
 #include <PubSubClient.h>
+#include <secretKey.h>
 
 // Configuration constants
 constexpr char SSID[] = "SamSua 2G";
