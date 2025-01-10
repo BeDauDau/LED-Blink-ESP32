@@ -163,6 +163,24 @@ void printMessage(char *topic, byte *payload, unsigned int length)
     }
     Serial.println();
 }
+
+void handleWhatButtonDo()
+{
+    if (digitalRead(BUTTON_PIN) == LOW)
+    {
+        delay(50);
+        if (digitalRead(BUTTON_PIN) == LOW)
+        {
+            if (!state.isAutoMode)
+            {
+                state.manualStartTime = millis();
+                sendStatus(); // Send status when button changes mode
+            }
+            while (digitalRead(BUTTON_PIN) == LOW)
+                ;
+        }
+    }
+}
 void setup()
 {
     Serial.begin(9600);
